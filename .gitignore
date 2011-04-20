@@ -1,0 +1,7 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+setup_load_paths.rb
+.DS_Store
+.rvmrc
