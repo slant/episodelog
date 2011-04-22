@@ -1,0 +1,6 @@
+<%- if current_user -%>
+
+<%= render :partial => 'shared/show', :collection => @shows %>
+<%= link_to 'New show', new_show_path if current_user.admin %>
+
+<%- end -%>

@@ -1,21 +1,17 @@
-<h1>Listing episodes</h1>
+<p>&laquo; <%= link_to "Back to #{@show.name}", show_path(@show.short_name) %></p>
+
+<h2><%= @show.name %> Episodes</h2>
 
 <table>
+<% @episodes.each do |season, episodes| %>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <td colspan="2"><h3>Season <%= season %></h3></td>
   </tr>
-
-<% @episodes.each do |episode| %>
+  <% episodes.each do |episode| %>
   <tr>
-    <td><%= link_to 'Show', episode %></td>
-    <td><%= link_to 'Edit', edit_episode_path(episode) %></td>
-    <td><%= link_to 'Destroy', episode, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= episode.episode %>
+    <td><%= link_to episode.name, show_episode_path(@show.short_name, episode.id) %></td>
   </tr>
+  <% end %>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Episode', new_episode_path %>

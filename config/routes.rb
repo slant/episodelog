@@ -1,7 +1,15 @@
 Episodelog::Application.routes.draw do
-  resources :episodes
 
-  resources :shows
+  devise_for :users do
+     get "login", :to => "devise/sessions#new"
+     get "logout", :to => "devise/sessions#destroy"
+     get "signup", :to => "devise/registrations#new"
+   end
+
+  resources :shows do
+    get ':short_name', :on => :collection, :to => 'shows#show'
+    resources :episodes
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -52,7 +60,7 @@ Episodelog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

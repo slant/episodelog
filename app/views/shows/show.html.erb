@@ -1,12 +1,7 @@
+<p>&laquo; <%= link_to "Back to Shows", shows_path %></p>
+
 <h2><%= @show.name %></h2>
 
 <p id="notice"><%= notice %></p>
 
-<ul>
-<%- @show.episodes.each do |episode| -%>
-  <li><%= episode.name %></li>
-<%- end -%>
-</ul>
-
-<%= link_to 'Edit', edit_show_path(@show) %> |
-<%= link_to 'Back', shows_path %>
+<%= link_to 'List all episodes', show_episodes_path(@show.short_name) %>

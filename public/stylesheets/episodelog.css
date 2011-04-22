@@ -1,0 +1,365 @@
+/* Begin fix for crappy IE 6 float clearing bug */
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix { display: inline-block; }
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */
+
+/* End of fix */
+
+
+
+body {
+  background: #222222;
+  color: #E0E0E0;
+  font-family: helvetica;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  color: #D0D0D0;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+h2 {
+  margin: 10px 0;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+h4 {
+  margin: 10px 0;
+}
+
+a {
+  color: #B0C060;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #B0C060;
+  text-decoration: underline;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;  
+}
+
+table {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/************/
+/*  Header  */
+/************/
+
+#header {
+  position: relative;
+  background: #404040;
+  border: 1px solid;
+  border-color: #404040 #404040 #808080 #404040;
+  margin: 0;
+}
+
+
+
+/**********/
+/*  Menu  */
+/**********/
+
+#menu {
+  background: #A0C060;
+}
+
+#menu ul {
+  font-weight: bold;
+  list-style: none;
+  margin: 0;
+  margin-left: 4px;
+  padding: 0;
+}
+
+#menu li {
+  float: left;
+}
+
+#menu a {
+  display: block;
+  color: #222222;
+  padding: 3px 8px;
+}
+
+
+
+/***********/
+/*  Panel  */
+/***********/
+
+#panel {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+}
+
+#panel.user-details {
+  height: 30px;
+  margin-top: -15px;
+}
+
+#panel.login {
+  height: 18px;
+  margin-top: -9px;
+}
+
+#panel.user-details p {
+  display: inline;
+}
+
+#panel.user-details .avatar {
+  vertical-align: middle;
+  background: #404040;
+  border: 1px solid #808080;
+  width: 26px;
+  height: 26px;
+  margin-right: 6px;
+  padding: 0;
+}
+
+#panel.user-details .avatar,
+#panel.user-details #controls {
+  float: left;
+}
+
+
+
+/***********/
+/*  Login  */
+/***********/
+
+#panel.login {
+  
+}
+
+#panel.login input {
+  background: #222222;
+  border: 1px solid #B0C060;
+  color: #B0C060;
+  margin-right: 8px;
+}
+
+#panel.login input.button {
+  background: #5E5E5E;
+  color: #D0D0D0;
+}
+
+
+
+/*****************/
+/*  Registraion  */
+/*****************/
+
+#registraion {
+  
+}
+
+#registraion input {
+  background: #222222;
+  border: 1px solid #B0C060;
+  color: #B0C060;
+  margin-right: 8px;
+}
+
+#registraion input.button {
+  background: #404040;
+  color: #D0D0D0;
+}
+
+
+
+/*************/
+/*  Content  */
+/*************/
+
+#body {
+  position: relative;
+}
+
+#content {
+  float: left;
+  clear: none;
+  width: 600px;
+  margin: 12px;
+}
+
+
+
+/**************/
+/*  Show box  */
+/**************/
+
+.show {
+  background: #404040;
+  border: 1px solid #808080;
+  margin: 12px;
+  padding: 8px;
+}
+
+.show .poster {
+  float: left;
+  width: 150px;
+}
+
+.show .details {
+  float: left;
+}
+
+
+
+/******************/
+/*  Progress bar  */
+/******************/
+
+.progress {
+  position: relative;
+  background: #222222;
+  border: 1px solid #505050;
+  font-size: 10px;
+  font-weight: bold;
+  height: 16px;
+  width: 100px;
+}
+
+.progress .complete {
+  position: absolute;
+  left: 0;
+  background: url('/images/percent-fill.jpg') repeat-x;
+  height: 100%;
+}
+
+
+
+/*************/
+/*  Sidebar  */
+/*************/
+
+.sidebar {
+  float: right;
+  clear: right;
+  background: #404040;
+  border: 1px solid #808080;
+  width: 220px;
+  margin: 12px;
+}
+
+.sidebar h3 {
+  background: #A0C060;
+  color: #404040;
+  font-size: 14px;
+  padding: 6px 10px 4px 10px;
+}
+
+p.note {
+  background: #A0C060;
+  color: #404040;
+  margin: 0;
+}
+
+p.note a {
+  display: block;
+  color: #404040;
+  padding: 4px 10px;
+}
+
+.storeitem {
+  border-bottom: 1px solid #808080;
+  text-align: center;
+  margin: 10px;
+}
+
+.storeitem.last {
+  border: 0;
+}
+
+.storeitem a {
+  border: 0;
+  padding: 10px;
+}
+
+.storeitem a img {
+  border: 0;
+}
+
+
+
+/************/
+/*  Footer  */
+/************/
+
+#footer {
+  clear: both;
+  background: #404040;
+  border: 1px solid #808080;
+  border-width: 1px 0;
+  padding: 3px 10px;
+}
+
+#footer p {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/********************/
+/*  Flash Messages  */
+/********************/
+
+#flash {
+  color: #222222;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+
+#flash p {
+  position: relative;
+  margin: 0;
+  padding: 10px 35px;
+  cursor: pointer;
+}
+
+#flash p.flash_notice {
+  background: #708050 url('/images/flash_notice.png') 10px 8px no-repeat;
+}
+
+#flash p.flash_error {
+  background: #D07050 url('/images/flash_error.png') 10px 8px no-repeat;
+}

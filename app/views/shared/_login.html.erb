@@ -1,0 +1,6 @@
+<%- form_tag new_user_session_path do -%>
+  <label for="email">Email</label> <%= text_field_tag 'user[email]', nil, :size => 20 %>
+  <label for="password">Password</label> <%= password_field_tag 'user[password]', nil, :size => 20 %>
+  <%= submit_tag 'Log in', :class => 'button' %>
+  <%= link_to "register", new_user_registration_path %><br />
+<%- end -%>

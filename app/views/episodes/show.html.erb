@@ -1,5 +1,8 @@
+<p>&laquo; <%= link_to "Back to #{@show.name} episodes", show_episodes_path(@show.short_name) %></p>
+
 <p id="notice"><%= notice %></p>
 
-
-<%= link_to 'Edit', edit_episode_path(@episode) %> |
-<%= link_to 'Back', episodes_path %>
+<h2><%= @episode.name %></h2>
+<p>Season <%= @episode.season %>, Episode: <%= @episode.episode %></p>
+<p>Air Date: <%= @episode.air_date.strftime('%m/%d/%Y') %></p>
+<p><%= @episode.synopsis %></p>
