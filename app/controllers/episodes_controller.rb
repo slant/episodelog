@@ -1,4 +1,6 @@
 class EpisodesController < ApplicationController
+  before_filter :authenticate_user!
+
   def index
     if params[:show_id]
       @show = Show.find_by_short_name(params[:show_id])
