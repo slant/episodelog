@@ -1,14 +1,15 @@
 <div class="show clearfix">
+<!--
   <div class="poster">
     <%= image_tag '' %>
   </div>
+-->
   <div class="details">
-    <h3><%= link_to show.name, show, :class => 'test' %> (<%= link_to 'add', "/shows/favorite/#{show.id}" %>)</h3>
+    <h3><%= link_to show.name, show_path(show.short_name), :class => 'test' %> (<%= link_to 'add', "/shows/favorite/#{show.id}" %>)</h3>
     <div class="show-details">
       <div class="progress"><div class="complete" style="width: <%= progress(show) %>%;"></div></div> <%= progress(show) %>% Complete
-      <p><%= pluralize show.seasons.size, "season" %></p>
-      <p><%= pluralize show.episodes.size, "episode" %></p>
-      <p>Seasons: <%= show.seasons.collect { |season| link_to_unless params[:season] == season.to_s, season, show_path(show, :season => season) }.join(' | ') %></p>
+      <p><%= pluralize show.seasons.size, "season" %>, <%= pluralize show.episodes.size, "episode" %></p>
+      <!--<p>Seasons: <%= show.seasons.collect { |season| link_to_unless params[:season] == season.to_s, season, show_path(show, :season => season) }.join(' | ') %></p>-->
     </div>
   </div>
 </div>

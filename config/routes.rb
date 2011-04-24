@@ -18,6 +18,11 @@ Episodelog::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
+  match 'dashboard' => 'home#dashboard'
+
+  match 'update_show_state' => 'application#update_show_state'
+  match 'update_episode_state' => 'application#update_episode_state'
+
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)

@@ -5,4 +5,8 @@ class Show < ActiveRecord::Base
   has_many :episodes, :dependent => :destroy
 
   validates_uniqueness_of :name, :short_name
+
+  def seasons
+    self.episodes.collect(&:season).uniq.sort
+  end
 end

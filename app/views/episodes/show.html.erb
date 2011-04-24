@@ -3,6 +3,6 @@
 <p id="notice"><%= notice %></p>
 
 <h2><%= @episode.name %></h2>
-<p>Season <%= @episode.season %>, Episode: <%= @episode.episode %></p>
-<p>Air Date: <%= @episode.air_date.strftime('%m/%d/%Y') %></p>
+<p>Season <%= @episode.season %>, Episode <%= @episode.episode %></p>
+<%= content_tag( :p, 'Air Date:' + @episode.air_date.strftime('%m/%d/%Y') ) if @episode.air_date %>
 <p><%= @episode.synopsis %></p>

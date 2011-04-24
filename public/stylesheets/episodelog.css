@@ -213,9 +213,7 @@ table {
 }
 
 #content {
-  float: left;
   clear: none;
-  width: 600px;
   margin: 12px;
 }
 
@@ -226,8 +224,10 @@ table {
 /**************/
 
 .show {
+  float: left;
   background: #404040;
   border: 1px solid #808080;
+  width: 150px;
   margin: 12px;
   padding: 8px;
 }
