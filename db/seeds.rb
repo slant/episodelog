@@ -77,7 +77,7 @@ urls.each do |url|
       episode[:season] = season.to_a.any? ? season[0].gsub('Season ','') : nil
 
       episode_number = /Episode \d+/.match(meta)
-
+      episode[:episode] = episode_number.to_a.any? ? episode_number[0].gsub('Episode ','') : nil
 
       episodes << Episode.new(episode)
     end
