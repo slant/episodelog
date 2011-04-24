@@ -1,7 +1,1 @@
-<table>
-<% @shows.each do |show| %>
-  <tr>
-    <td id="<%= show.id %>" class="show"><%= link_to show.name, show_path(show.short_name) %> (<%= link_to 'add','#', :class => 'add' %>)</td>
-  </tr>
-<% end %>
-</table>
+<%= render :partial => 'shared/show', :collection => @shows, :locals => { :mode => '' } %>

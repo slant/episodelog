@@ -22,13 +22,7 @@
       </ul>
     </div>
 
-    <%- unless flash.empty? -%>
-    <div id="flash">
-      <%- flash.keys.each do |msg| -%>
-      <p class="flash_<%= msg %>"><%= flash[msg.to_sym] %></p>
-      <%- end -%>
-    </div>
-    <%- end -%>
+    <p id="notice"><%= notice %></p>
 
     <div id="body">
       <div id="content">

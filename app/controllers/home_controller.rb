@@ -7,6 +7,6 @@ class HomeController < ApplicationController
   end
 
   def dashboard
-    @shows = current_user.shows if current_user.shows.any?
+    @shows = current_user.shows
   end
 end

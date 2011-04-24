@@ -4,7 +4,7 @@ class EpisodesController < ApplicationController
   def index
     if params[:show_id]
       @show = Show.find_by_short_name(params[:show_id])
-      @episodes = Episode.where(:show_id => @show.id).group_by { |e| e.season }
+      @episodes = Episode.where(:show_id => @show.id).sort_by(&:season).sort_by(&:episode).group_by(&:season)
     end
   end
 

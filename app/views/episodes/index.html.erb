@@ -5,10 +5,12 @@
 <table>
 <% @episodes.each do |season, episodes| %>
   <tr>
+    <td></td>
     <td colspan="2"><h3>Season <%= season %></h3></td>
   </tr>
   <% episodes.each do |episode| %>
-  <tr>
+  <tr id="<%= episode.id %>" class="episode">
+    <td><%= check_box_tag 'episodes[]', episode.id, episode.watched?(current_user), :id => "episode_state_#{episode.id}" %></td>
     <td><%= episode.episode %>
     <td><%= link_to episode.name, show_episode_path(@show.short_name, episode.id) %></td>
   </tr>

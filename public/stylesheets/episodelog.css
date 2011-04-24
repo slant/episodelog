@@ -89,6 +89,10 @@ table {
   margin: 0;
 }
 
+#header #logo {
+  padding-left: 12px
+}
+
 
 
 /**********/
@@ -227,7 +231,8 @@ table {
   float: left;
   background: #404040;
   border: 1px solid #808080;
-  width: 150px;
+  width: 300px;
+  height: 88px;
   margin: 12px;
   padding: 8px;
 }
@@ -239,6 +244,10 @@ table {
 
 .show .details {
   float: left;
+}
+
+#dashboard .show {
+  height: 150px;
 }
 
 

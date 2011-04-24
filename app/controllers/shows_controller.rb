@@ -6,7 +6,7 @@ class ShowsController < ApplicationController
   end
 
   def show
-    @show = Show.find_by_short_name(params[:short_name])
+    @show = Show.find_by_short_name(params[:id])
   end
 
   def new
@@ -14,7 +14,7 @@ class ShowsController < ApplicationController
   end
 
   def edit
-    @show = Show.find_by_short_name(params[:short_name])
+    @show = Show.find_by_short_name(params[:id])
   end
 
   def create

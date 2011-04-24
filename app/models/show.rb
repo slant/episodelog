@@ -6,6 +6,10 @@ class Show < ActiveRecord::Base
 
   validates_uniqueness_of :name, :short_name
 
+  def to_param
+    short_name
+  end
+
   def seasons
     self.episodes.collect(&:season).uniq.sort
   end

@@ -7,7 +7,6 @@ Episodelog::Application.routes.draw do
    end
 
   resources :shows do
-    get ':short_name', :on => :collection, :to => 'shows#show'
     resources :episodes
   end
 
