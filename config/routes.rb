@@ -8,6 +8,7 @@ Episodelog::Application.routes.draw do
 
   resources :shows do
     resources :episodes
+    get 'episodes/:season/:episode' => 'episodes#show', :as => 'formatted_episode'
   end
 
   # The priority is based upon order of creation:

@@ -12,7 +12,7 @@
         <h1>Episode Log</h1>
         <% controller.controller_name + ' - ' + controller.action_name %>
       </div>
-<%= render :partial => 'shared/panel' %>
+      <%= render :partial => 'shared/panel' %>
     </div>
 
     <div id="menu" class="clearfix">
@@ -22,18 +22,18 @@
       </ul>
     </div>
 
-    <p id="notice"><%= notice %></p>
+    <%= content_tag( :p, notice, :id => 'flash', :class => 'notice' ) if notice %>
 
     <div id="body">
       <div id="content">
-<%= yield %>
+        <%= yield %>
         <div style="clear: both"></div>
       </div>
     </div>
 
     <div id="footer-wrapper">
       <div id="footer">
-        <p>Copyright <%= Time.now.year %> &copy; <%= link_to "Cylence, Inc.", "http://cylence.com" %></p>
+        <p>Copyright <%= Time.now.year %> &copy; <%= link_to 'Cylence, Inc.', 'http://cylence.com' %></p>
       </div>
     </div>
   </body>

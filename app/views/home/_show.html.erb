@@ -8,7 +8,10 @@
     <h3><%= link_to show.name, show_path(show.short_name), :class => 'test' %></h3>
     <p><%= link_to 'episodes', show_episodes_path(show) %> | <%= link_to 'remove', '', :class => 'remove' %></p>
     <div class="show-details">
-      <div class="progress"><div class="complete" style="width: <%= progress(show) %>%;"></div></div> <%= progress(show) %>% Complete
+      <div class="progress">
+        <div class="complete" style="width: <%= progress(show) %>px;"></div>
+        <span class="copy"><%= progress(show) == 100 ? "Completed" : "#{progress(show)}% Complete" %></span>
+      </div>
       <p><%= pluralize show.seasons.size, "season" %>, <%= pluralize show.episodes.size, "episode" %></p>
       <!--<p>Seasons: <%= show.seasons.collect { |season| link_to_unless params[:season] == season.to_s, season, show_path(show, :season => season) }.join(' | ') %></p>-->
     </div>

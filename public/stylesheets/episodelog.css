@@ -234,7 +234,7 @@ table {
   width: 300px;
   height: 88px;
   margin: 12px;
-  padding: 8px;
+  padding: 0 8px;
 }
 
 .show .poster {
@@ -247,7 +247,7 @@ table {
 }
 
 #dashboard .show {
-  height: 150px;
+  height: 134px;
 }
 
 
@@ -260,17 +260,29 @@ table {
   position: relative;
   background: #222222;
   border: 1px solid #505050;
+  border-radius: 8px;
   font-size: 10px;
   font-weight: bold;
-  height: 16px;
-  width: 100px;
+  height: 18px;
+  width: 102px;
 }
 
 .progress .complete {
-  position: absolute;
-  left: 0;
+  display: block;
+  border-radius: 6px;
   background: url('/images/percent-fill.jpg') repeat-x;
+  height: 16px;
+  margin: 1px;
+}
+
+.progress .copy {
+  display: block;
   height: 100%;
+  line-height: 15px;
+  width: 100%;
+  text-align: center;
+  margin-top: -17px;
+  text-shadow: 0 0 8px #111;
 }
 
 
@@ -351,24 +363,22 @@ p.note a {
 /*  Flash Messages  */
 /********************/
 
-#flash {
+p#flash {
+  position: relative;
   color: #222222;
   font-size: 12px;
   font-weight: bold;
   margin: 0;
-}
-
-#flash p {
-  position: relative;
-  margin: 0;
-  padding: 10px 35px;
+  padding: 0 0 0 35px;
+  height: 32px;
+  line-height: 32px;
   cursor: pointer;
 }
 
-#flash p.flash_notice {
+p#flash.notice {
   background: #708050 url('/images/flash_notice.png') 10px 8px no-repeat;
 }
 
-#flash p.flash_error {
+p#flash.error {
   background: #D07050 url('/images/flash_error.png') 10px 8px no-repeat;
 }

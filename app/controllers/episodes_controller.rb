@@ -4,14 +4,15 @@ class EpisodesController < ApplicationController
   def index
     if params[:show_id]
       @show = Show.find_by_short_name(params[:show_id])
-      @episodes = Episode.where(:show_id => @show.id).sort_by(&:season).sort_by(&:episode).group_by(&:season)
+      @episodes = Episode.where(:show_id => @show.id).order('season asc').order('episode asc').group_by(&:season)
     end
   end
 
   def show    
     if params[:show_id]
       @show = Show.find_by_short_name(params[:show_id])
-      @episode = Episode.where(:id => params[:id], :show_id => @show.id).first
+      @episode = Episode.where(:show_id => @show.id, :season => params[:season], :episode => params[:episode]).first
+      redirect_to 'index' unless @episode
     else
       @episode = Episode.find(params[:id])
     end
