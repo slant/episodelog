@@ -22,7 +22,7 @@
       </ul>
     </div>
 
-    <%= content_tag( :p, notice, :id => 'flash', :class => 'notice' ) if notice %>
+    <%= content_tag( :p, notice, :id => 'flash', :class => 'notice', :style => (notice ? '' : 'display: none') ) %>
 
     <div id="body">
       <div id="content">

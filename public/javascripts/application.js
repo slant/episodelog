@@ -8,10 +8,10 @@ $(document).ready(function(){
       url: '/update_show_state',
       data: { state: 'add', show_id: show_id },
       success: function(data) {
-        $('#notice').text('This show has been added to your dashboard.');
+        $('.notice').text('This show has been added to your dashboard.').fadeIn();
       },
       error: function(data) {
-        $('#notice').text('There was a problem while trying to remove this show from your dashboard.');
+        $('.notice').text('There was a problem while trying to remove this show from your dashboard.').fadeIn();
       }
     });
     //$('p#notice')
@@ -31,7 +31,7 @@ $(document).ready(function(){
           show.closest('.show').fadeOut();
         },
         error: function(data){
-          $('#notice').text('There was a problem while trying to remove this show from your dashboard.');
+          $('.notice').text('There was a problem while trying to remove this show from your dashboard.').fadeIn();
         },
         dataType: 'text'
       });
