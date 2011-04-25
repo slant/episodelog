@@ -7,6 +7,6 @@ class HomeController < ApplicationController
   end
 
   def dashboard
-    @shows = current_user.shows
+    @shows = current_user.shows.order('name asc')
   end
 end
