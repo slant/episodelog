@@ -11,8 +11,7 @@ class EpisodesController < ApplicationController
   def show    
     if params[:show_id]
       @show = Show.find_by_short_name(params[:show_id])
-      @episode = Episode.where(:show_id => @show.id, :season => params[:season], :episode => params[:episode]).first
-      redirect_to 'index' unless @episode
+      @episode = Episode.where(:show_id => @show.id, :id => params[:id]).first
     else
       @episode = Episode.find(params[:id])
     end
