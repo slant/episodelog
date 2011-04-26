@@ -2,7 +2,7 @@ class ShowsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @shows = Show.all
+    @shows = Show.all.sort_by(&:name)
   end
 
   def show
