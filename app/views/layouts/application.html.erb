@@ -7,16 +7,18 @@
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <div id="header" class="clearfix">
-      <div id="logo">
-        <h1>Episode Log</h1>
-        <% controller.controller_name + ' - ' + controller.action_name %>
+    <div id="header_container">
+      <div id="header">
+        <div id="logo">
+          <h1>Episode Log</h1>
+          <% controller.controller_name + ' - ' + controller.action_name %>
+        </div>
+        <%= render :partial => 'shared/panel' %>
       </div>
-      <%= render :partial => 'shared/panel' %>
     </div>
 
-    <div id="menu" class="clearfix">
-      <ul>
+    <div id="nav_container">
+      <ul id="nav">
         <%=raw "<li>" + link_to('Dashboard', root_path) + "</li>" if user_signed_in? %>
         <li><%= link_to 'Shows', shows_path %></li>
       </ul>
@@ -31,9 +33,9 @@
       </div>
     </div>
 
-    <div id="footer-wrapper">
+    <div id="footer_container">
       <div id="footer">
-        <p>Copyright <%= Time.now.year %> &copy; <%= link_to 'Cylence, Inc.', 'http://cylence.com' %></p>
+        <p>Copyright &copy; <%= Time.now.year %> <%= link_to 'Cylence, Inc.', 'http://cylence.com' %></p>
       </div>
     </div>
   </body>

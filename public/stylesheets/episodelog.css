@@ -17,6 +17,15 @@
 /* End of fix */
 
 
+#header_container,
+#nav,
+#content {
+  
+}
+
+
+
+
 
 body {
   background: #222222;
@@ -81,12 +90,17 @@ table {
 /*  Header  */
 /************/
 
+#header_container {
+  background: #404040;
+  position: relative;
+}
+
 #header {
   position: relative;
-  background: #404040;
-  border: 1px solid;
-  border-color: #404040 #404040 #808080 #404040;
-  margin: 0;
+  width: 800px;
+  margin: 0 auto;
+  height: 48px;
+  overflow: auto;
 }
 
 #header #logo {
@@ -99,26 +113,38 @@ table {
 /*  Menu  */
 /**********/
 
-#menu {
+#nav_container {
+  position: relative;
   background: #A0C060;
+  border: solid #808080;
+  border-width: 1px 0;
 }
 
-#menu ul {
+#nav {
+  font-size: 14px;
   font-weight: bold;
   list-style: none;
-  margin: 0;
-  margin-left: 4px;
-  padding: 0;
+  width: 800px;
+  margin: 0 auto;
+  padding: 0 0 0 4px;
+  height: 32px;
 }
 
-#menu li {
+#nav li {
   float: left;
+  line-height: 32px;
 }
 
-#menu a {
+#nav a {
   display: block;
   color: #222222;
-  padding: 3px 8px;
+  padding: 0 16px;
+  height: 32px;
+  line-height: 32px;
+}
+
+#nav a:hover {
+
 }
 
 
@@ -218,7 +244,8 @@ table {
 
 #content {
   clear: none;
-  margin: 12px;
+  width: 800px;
+  margin: 12px auto;
 }
 
 
@@ -290,6 +317,44 @@ table {
 }
 
 
+/******************/
+/*  Episode List  */
+/******************/
+
+#episodes {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#episodes .season {
+  border-bottom: 1px solid #3A3A3A;
+  height: 60px;
+  vertical-align: bottom;
+}
+
+#episodes .episode {
+  border: solid #3A3A3A;
+  border-width: 0 1px 1px 0;
+  cursor: pointer;
+}
+
+#episodes .episode.active {
+  background: #404040;
+}
+
+#episodes .episode .checkbox {
+  background: #404040;
+  text-align: center;
+  width: 32px;
+  height: 32px;
+}
+
+#episodes .episode .episode_number {
+  text-align: center;
+  width: 32px;
+}
+
+
 
 /*************/
 /*  Sidebar  */
@@ -348,11 +413,19 @@ p.note a {
 /*  Footer  */
 /************/
 
-#footer {
+#footer_container {
+  position: relative;
   clear: both;
   background: #404040;
   border: 1px solid #808080;
   border-width: 1px 0;
+}
+
+#footer {
+  width: 800px;
+  height: 32px;
+  line-height: 32px;
+  margin: auto;
   padding: 3px 10px;
 }
 

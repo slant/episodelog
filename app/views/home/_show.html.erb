@@ -10,7 +10,7 @@
     <div class="show-details">
       <div class="progress">
         <div class="complete" style="width: <%= progress(show) %>px;"></div>
-        <span class="copy"><%= progress(show) == 100 ? "Completed" : "#{progress(show)}% Complete" %></span>
+        <span class="copy"><%= progress(show) == 100 ? "completed" : "#{progress(show)}% complete" %></span>
       </div>
       <p><%= pluralize show.seasons.size, "season" %>, <%= pluralize show.episodes.size, "episode" %></p>
       <!--<p>Seasons: <%= show.seasons.collect { |season| link_to_unless params[:season] == season.to_s, season, show_path(show, :season => season) }.join(' | ') %></p>-->

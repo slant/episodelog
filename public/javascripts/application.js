@@ -48,4 +48,16 @@ $(document).ready(function(){
     $.get('/update_episode_state', { state: state, episode_id: episode_id });
   });
 
+  $('.episode_number, .name, .air_date', '#episodes .episode').bind('click', function(){
+    episode_url = $(this).find('.name a').attr('href')
+    alert(episode_url);
+  });
+
+  $('#episodes .episode').hover(
+    function(){
+      $(this).addClass('active');
+    },
+    function(){
+      $(this).removeClass('active');
+    });
 });
