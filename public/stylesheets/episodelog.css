@@ -17,10 +17,11 @@
 /* End of fix */
 
 
-#header_container,
+#header,
 #nav,
-#content {
-  
+#content,
+#footer {
+  width: 1000px;
 }
 
 
@@ -97,7 +98,6 @@ table {
 
 #header {
   position: relative;
-  width: 800px;
   margin: 0 auto;
   height: 48px;
   overflow: auto;
@@ -124,7 +124,6 @@ table {
   font-size: 14px;
   font-weight: bold;
   list-style: none;
-  width: 800px;
   margin: 0 auto;
   padding: 0 0 0 4px;
   height: 32px;
@@ -244,7 +243,6 @@ table {
 
 #content {
   clear: none;
-  width: 800px;
   margin: 12px auto;
 }
 
@@ -258,7 +256,7 @@ table {
   float: left;
   background: #404040;
   border: 3px solid #808080;
-  width: 300px;
+  width: 280px;
   height: 88px;
   margin: 12px;
   padding: 0 8px;
@@ -422,7 +420,6 @@ p.note a {
 }
 
 #footer {
-  width: 800px;
   height: 32px;
   line-height: 32px;
   margin: auto;
