@@ -256,9 +256,10 @@ table {
   float: left;
   background: #404040;
   border: 3px solid #808080;
+  border-radius: 8px;
   width: 280px;
   height: 88px;
-  margin: 12px;
+  margin: 8px;
   padding: 0 8px;
 }
 
