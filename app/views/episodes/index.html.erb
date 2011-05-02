@@ -2,20 +2,21 @@
 
 <h2><%= @show.name %> Episodes</h2>
 
-<table id="episodes">
 <% @episodes.each do |season, episodes| %>
-  <tr>
-    <td class="season" colspan="4"><h3>Season <%= season %></h3></td>
+<table id="season_<%= season %>_episodes" class="season_episodes">
+  <tr class="season">
+    <td class="checkbox"><%= check_box_tag 'seasons[]', season, false, :id => "season_state_#{season}" %></td>
+    <td class="season_number" colspan="3"><h3>Season <%= season %></h3></td>
   </tr>
   <% episodes.each do |episode| %>
-  <tr id="<%= episode.id %>" class="episode">
+  <tr id="episode_<%= episode.id %>" class="episode">
     <td class="checkbox"><%= check_box_tag 'episodes[]', episode.id, episode.watched?(current_user), :id => "episode_state_#{episode.id}" %></td>
     <td class="episode_number"><%= episode.episode %></td>
     <td class="name"><%= link_to episode.name, show_episode_path(@show.short_name, episode.id) %></td>
     <td class="air_date"><%= episode.air_date ? episode.air_date.strftime('%m/%d/%Y') : '' %></td>
   </tr>
   <% end %>
-<% end %>
 </table>
+<% end %>
 
 <p>&laquo; <%= link_to "Back to #{@show.name}", show_path(@show.short_name) %></p>

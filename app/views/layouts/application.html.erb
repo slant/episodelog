@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Episodelog</title>
+    <title>EpisodeLog</title>
     <%= stylesheet_link_tag :all %>
     <%= javascript_include_tag 'jquery-1.5.2.min', :defaults %>
     <%= csrf_meta_tag %>
@@ -10,7 +10,7 @@
     <div id="header_container">
       <div id="header">
         <div id="logo">
-          <h1>Episode Log</h1>
+          <h1>EpisodeLog</h1>
           <% controller.controller_name + ' - ' + controller.action_name %>
         </div>
         <%= render :partial => 'shared/panel' %>
@@ -35,7 +35,7 @@
 
     <div id="footer_container">
       <div id="footer">
-        <p>Copyright &copy; <%= Time.now.year %> <%= link_to 'Cylence, Inc.', 'http://cylence.com' %></p>
+        <p><%= link_to 'Feedback', 'https://convore.com/episodelog' %> <span class="divider">|</span> Copyright &copy; <%= Time.now.year %> <%= link_to 'Cylence, Inc.', 'http://cylence.com' %></p>
       </div>
     </div>
   </body>
