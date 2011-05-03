@@ -1,7 +1,21 @@
 <p>&laquo; <%= link_to "Back to Shows", shows_path %></p>
 
-<h2><%= @show.name %></h2>
+<div id="show_progress">
+  <h3>Your Progress</h3>
+  <ul>
+    <% @show.seasons.each do |s| %>
+    <li>
+      <span class="season_number">Season <%= s %></span>
+      <div class="progress">
+        <div class="complete" style="width: <%= progress(@show, s) %>px;"></div>
+        <span class="copy"><%= progress(@show, s) == 100 ? "completed" : "#{progress(@show, s)}% complete" %></span>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
 
+<h2><%= @show.name %></h2>
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'List all episodes', show_episodes_path(@show) %>

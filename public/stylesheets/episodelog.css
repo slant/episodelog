@@ -290,6 +290,7 @@ table {
 /******************/
 
 .progress {
+  display: inline-block;
   position: relative;
   background: #222222;
   border: 1px solid #505050;
@@ -317,6 +318,31 @@ table {
   margin-top: -17px;
   text-shadow: 0 0 8px #111;
 }
+
+
+
+/******************/
+/*  Show details  */
+/******************/
+
+#show_progress {
+  float: right;
+  border: 1px solid #808080;
+  border-radius: 6px;
+  width: 170px;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+}
+
+#show_progress li {
+  margin: 8px 0;
+}
+
+#show_progress .season_number {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
 
 
 /******************/
