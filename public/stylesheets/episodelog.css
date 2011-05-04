@@ -334,15 +334,28 @@ table {
   margin-bottom: 20px;
 }
 
-#show_progress li {
+#show_progress li.season {
   margin: 8px 0;
+  height: 20px;
+}
+
+#show_progress hr {
+  border: 0;
+  background: #808080;
+  height: 1px;
+  margin: 12px 0;
 }
 
 #show_progress .season_number {
+  float: left;
   font-weight: bold;
   margin-right: 8px;
+  line-height: 20px;
 }
 
+#show_progress .progress {
+  float: right;
+}
 
 
 /******************/

@@ -3,8 +3,17 @@
 <div id="show_progress">
   <h3>Your Progress</h3>
   <ul>
+    <li><hr /></li>
+    <li class="season">
+      <span class="season_number">Overall</span>
+      <div class="progress">
+        <div class="complete" style="width: <%= progress(@show) %>px;"></div>
+        <span class="copy"><%= progress(@show) == 100 ? "completed" : "#{progress(@show)}% complete" %></span>
+      </div>
+    </li>
+    <li><hr /></li>
     <% @show.seasons.each do |s| %>
-    <li>
+    <li class="season">
       <span class="season_number">Season <%= s %></span>
       <div class="progress">
         <div class="complete" style="width: <%= progress(@show, s) %>px;"></div>
