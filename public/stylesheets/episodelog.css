@@ -400,6 +400,11 @@ table {
   width: 32px;
 }
 
+.season_episodes .episode .air_date {
+  text-align: center;
+  width: 90px;
+}
+
 
 
 /*************/
