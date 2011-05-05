@@ -316,7 +316,18 @@ table {
 .progress .complete {
   display: block;
   border-radius: 6px;
-  background: url('/images/percent-fill.jpg') repeat-x;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.10, rgb(115, 144, 42)),
+    color-stop(0.70, rgb(176, 208, 112))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(115, 144, 42) 10%,
+    rgb(176, 208, 112) 70%
+  );
   height: 16px;
   margin: 1px;
 }
