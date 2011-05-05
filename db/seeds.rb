@@ -88,7 +88,7 @@ urls.each do |url|
   existing[:episodes] = existing_episodes.collect(&:episode)
 
   # Prevent duplicate show-specific episodes from being created
-  new_episodes = episodes.reject { |e| existing[:names].include? e.name and existing[:seasons].include? e.season and existing[:episodes].include? e.episode }
+  new_episodes = episodes.reject { |e| (existing[:names].include? e.name and existing[:seasons].include? e.season and existing[:episodes].include? e.episode) or e.name == '' }
 
   show.episodes << new_episodes
 
