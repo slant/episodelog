@@ -11,6 +11,6 @@ class Show < ActiveRecord::Base
   end
 
   def seasons
-    self.episodes.collect(&:season).uniq.sort
+    self.episodes.collect(&:season).uniq.compact.sort
   end
 end

@@ -6,7 +6,7 @@
 -->
   <div class="details">
     <h3><%= link_to show.name, show_path(show.short_name), :class => 'test' %></h3>
-    <p><%= link_to 'episodes', show_episodes_path(show) %> | <%= link_to 'favorite', '', :class => 'add' %></p>
+    <p><%= link_to 'episodes', show_episodes_path(show) %> | <%= current_user.shows.include?(show) ? link_to('remove', '', :class => 'remove') : link_to('favorite', '', :class => 'add') %></p>
     <div class="show-details">
       <p><%= pluralize show.seasons.size, "season" %>, <%= pluralize show.episodes.size, "episode" %></p>
     </div>

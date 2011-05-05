@@ -13,6 +13,8 @@ $(document).ready(function(){
       success: function(data) {
         $('.notice').text('This show has been added to your dashboard.').fadeIn();
         show.addClass('favorite');
+        // $(this).removeClass('add').addClass('remove');
+        // $(this).text('remove');
       },
       error: function(data) {
         $('.notice').text('There was a problem while trying to remove this show from your dashboard.').fadeIn();
@@ -34,6 +36,8 @@ $(document).ready(function(){
         data: { state: 'remove', show_id: show_id },
         success: function(data){
           show.closest('.show').fadeOut();
+          // $(this).removeClass('remove').addClass('add');
+          // $(this).text('favorite');
         },
         error: function(data){
           $('.notice').text('There was a problem while trying to remove this show from your dashboard.').fadeIn();
