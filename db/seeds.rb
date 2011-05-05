@@ -18,6 +18,7 @@ urls = [
   'http://www.tv.com/house/show/22374/episode.html?season=All', # House
   'http://www.tv.com/how-i-met-your-mother/show/33700/episode.html?season=All', # How I Met Your Mother
   'http://www.tv.com/lost/show/24313/episode.html?season=All', # Lost
+  'http://www.tv.com/the-middle/show/68657/episode.html?season=All', # Middle, The
   'http://www.tv.com/ncis/show/16772/episode.html?season=All', # NCIS
   'http://www.tv.com/ncis-los-angeles/show/76607/episode.html?season=All', # NCIS: Los Angeles
   'http://www.tv.com/the-office/show/22343/episode.html?season=All', # The Office
