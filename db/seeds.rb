@@ -21,6 +21,7 @@ urls = [
   'http://www.tv.com/ncis/show/16772/episode.html?season=All', # NCIS
   'http://www.tv.com/ncis-los-angeles/show/76607/episode.html?season=All', # NCIS: Los Angeles
   'http://www.tv.com/the-office/show/22343/episode.html?season=All', # The Office
+  'http://www.tv.com/scrubs/show/3613/episode.html?season=All', # Scrubs
   'http://www.tv.com/seinfeld/show/112/episode.html?season=All', # Seinfeld
   'http://www.tv.com/the-simpsons/show/146/episode.html?season=All', # The Simpsons
   'http://www.tv.com/south-park/show/344/episode.html?season=All', # South Park
@@ -29,6 +30,7 @@ urls = [
   'http://www.tv.com/star-trek-enterprise/show/2498/episode.html?season=All', # Star Trek: Enterprise
   'http://www.tv.com/star-trek-the-next-generation/show/137/episode.html?season=All', # Star Trek: The Next Generation
   'http://www.tv.com/star-trek-voyager/show/274/episode.html?season=All', # Star Trek: Voyager Season
+  'http://www.tv.com/supernatural/show/30144/episode.html?season=All', # Supernatural
   'http://www.tv.com/the-x-files/show/61/episode.html?season=All' # The X-Files
 ]
 
