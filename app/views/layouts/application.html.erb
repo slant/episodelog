@@ -1,9 +1,12 @@
+<%= mobile_device? %>
 <!DOCTYPE html>
 <html>
   <head>
     <title>EpisodeLog</title>
-    <%= stylesheet_link_tag :all %>
-    <%= javascript_include_tag 'jquery-1.5.2.min', :defaults %>
+    <%= stylesheet_link_tag 'episodelog.css' unless mobile_device? %>
+    <%= stylesheet_link_tag 'mobile.css' if mobile_device? %>
+    <%= javascript_include_tag 'jquery-1.5.2.min', 'application' unless mobile_device? %>
+    <%= javascript_include_tag 'jquery-1.5.2.min', 'jqtouch', 'mobile' if mobile_device? %>
     <%= csrf_meta_tag %>
   </head>
   <body>
@@ -19,10 +22,12 @@
       </div>
 
       <div id="nav_container">
-        <ul id="nav">
-          <%=raw "<li>" + link_to('Dashboard', root_path) + "</li>" if user_signed_in? %>
-          <li><%= link_to 'Shows', shows_path %></li>
-        </ul>
+        <div id="nav">
+          <ul>
+            <%=raw "<li>" + link_to('Dashboard', root_path) + "</li>" if user_signed_in? %>
+            <li><%= link_to 'Shows', shows_path %></li>
+          </ul>
+        </div>
       </div>
 
       <%= content_tag( :p, notice, :id => 'flash', :class => 'notice', :style => (notice ? '' : 'display: none') ) %>

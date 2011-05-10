@@ -1,0 +1,5 @@
+<div id="dashboard">
+  <h2>Your shows</h2>
+  <%= render :partial => 'home/show', :collection => @shows, :locals => { :mode => 'dashboard' } %>
+  <%=raw 'You are not following any shows yet. ' + link_to('Go add some', shows_path) + '!' if @shows.empty? %>
+</div>

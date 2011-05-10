@@ -48,5 +48,5 @@ Episodelog::Application.configure do
   config.active_support.deprecation = :notify
 
   # Devise configuration
-  config.action_mailer.default_url_options = { :host => 'episodelog.com' }
+  config.action_mailer.default_url_options = { :host => 'http://episodelog.heroku.com' }
 end

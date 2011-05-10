@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EpisodeLog</title>
+    <%= stylesheet_link_tag 'mobile.css' %>
+    <%= javascript_include_tag 'jquery-1.5.2.min', 'jqtouch', 'mobile' %>
+    <%= csrf_meta_tag %>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+  </head>
+  <body>
+    <nav>
+      <div class="left_button"><%= yield :left_button %></div>
+      <div class="right_button"><%= yield :right_button %></div>
+      <h1><%= yield :nav_title %></h1>
+    </nav>
+
+    <%= content_tag( :p, notice, :id => 'flash', :class => 'notice', :style => (notice ? '' : 'display: none') ) %>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>

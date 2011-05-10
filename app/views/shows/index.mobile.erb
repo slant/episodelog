@@ -1,0 +1,15 @@
+<% content_for :left_button do %>
+  <% link_to('Dashboard', root_path, :id => 'left_button', :class => 'back') %>
+<% end %>
+
+<% content_for :nav_title do %>
+  <div id="title">Shows</div>
+<% end %>
+
+<% content_for :right_button do %>
+  <% link_to('Search', root_path, :id => 'right_button', :class => 'search_button') %>
+<% end %>
+
+<div id="shows">
+  <%= render :partial => 'shared/show', :collection => @shows, :locals => { :mode => 'all' } %>
+</div>

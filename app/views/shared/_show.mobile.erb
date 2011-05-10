@@ -1,0 +1,9 @@
+<div id="show_<%= show.id %>" class="show clearfix<%= current_user.shows.include?(show) ? ' favorite' : '' %>">
+  <div class="status">
+    <%= current_user.shows.include?(show) ? link_to('remove', '', :class => 'remove') : link_to('favorite', '', :class => 'add') %>
+  </div>
+  <% link_to show_episodes_path(show), :class => 'details' do %>
+    <h3><%= show.name %></h3>
+    <p><%= pluralize show.seasons.size, 'season' %>, <%= pluralize(show.episodes.size, 'episode') %></p>
+  <% end %>
+</div>

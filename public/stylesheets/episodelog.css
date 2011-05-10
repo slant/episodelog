@@ -87,9 +87,11 @@ table {
   min-height: 100%;
 }
 
-#header, #nav,
-#content, #footer {
+#header, #nav, #content, #footer {
   width: 1000px;
+  margin: 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 
@@ -106,12 +108,7 @@ table {
 
 #header {
   position: relative;
-  margin: 0 auto;
   height: 48px;
-}
-
-#header #logo {
-  padding-left: 12px
 }
 
 
@@ -138,7 +135,7 @@ table {
   border-bottom: 1px solid #73902A;
 }
 
-#nav {
+#nav ul {
   border-left: 1px solid #83A03A;
   font-size: 14px;
   font-weight: bold;
@@ -167,6 +164,10 @@ table {
   text-decoration: none;
 }
 
+#nav a:active {
+  background: #80A040;
+  text-decoration: none;
+}
 
 
 /***********/
@@ -263,12 +264,13 @@ table {
 
 #body {
   position: relative;
+  padding-top: 10px;
+  padding-bottom: 44px;
 }
 
 #content {
   clear: none;
-  margin: 0 auto;
-  padding: 12px 12px 50px;
+  padding: 12px auto 50px;
 }
 
 
@@ -298,6 +300,7 @@ table {
 }
 
 .show.favorite {
+  background: #363C30;
   border-color: #B0C060;
 }
 
@@ -515,7 +518,7 @@ p.note a {
   border-top: 1px solid #5A5A5A;
   border-bottom: 1px solid #3A3A3A;
   border-width: 1px 0;
-  margin-top: -40px;
+  margin-top: -34px;
   clear: both;
 }
 
