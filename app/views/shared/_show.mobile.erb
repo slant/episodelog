@@ -1,4 +1,4 @@
-<div id="show_<%= show.id %>" class="show clearfix<%= current_user.shows.include?(show) ? ' favorite' : '' %>">
+<div id="show_<%= show.id %>" class="show<%= current_user.shows.include?(show) ? ' favorite' : '' %>">
   <div class="status">
     <%= current_user.shows.include?(show) ? link_to('remove', '', :class => 'remove') : link_to('favorite', '', :class => 'add') %>
   </div>

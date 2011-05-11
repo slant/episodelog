@@ -48,24 +48,39 @@ nav #title {
   line-height: 44px;
 }
 
+nav #left_button,
+nav #right_button {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.00, rgb(42, 42, 42)),
+    color-stop(1, rgb(65, 65, 65))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(42, 42, 42) 10%,
+    rgb(58, 58, 58) 50%
+  );
+  color: #E0E0E0;
+  border: 1px solid #222222;
+  border-radius: 5px;
+  height: 24px;
+  line-height: 24px;
+  margin: 6px;
+  padding: 3px 10px;
+}
+
 nav #left_button {
   position: absolute;
   top: 0;
   left: 0;
-  color: #E0E0E0;
-  height: 44px;
-  line-height: 44px;
-  padding: 0 0 0 17px;
 }
 
 nav #right_button {
   position: absolute;
   top: 0;
   right: 0;
-  color: #E0E0E0;
-  height: 44px;
-  line-height: 44px;
-  padding: 0 8px;
 }
 
 
@@ -73,7 +88,7 @@ nav #right_button {
 
 #shows .show {
   background: #303030;
-  border: 1px solid #707070;
+  border: 1px solid #404040;
   border-radius: 8px;
   height: 70px;
   margin: 8px;
@@ -99,6 +114,13 @@ nav #right_button {
 #shows .show .status a {
   display: block;
   line-height: 70px;
+  text-decoration: none;
+}
+
+#shows .show .status a:hover,
+#shows .show .status a:active,
+#shows .show .status a:focus {
+  text-decoration: none;
 }
 
 #shows .show.favorite .status {

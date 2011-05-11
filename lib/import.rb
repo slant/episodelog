@@ -14,7 +14,7 @@ module Import
       puts # add a new line before beginning the import
 
       URLS.each do |url|
-        doc = get_data(url)
+        doc = get_episodes(url)
         episodes = []
 
         name = doc.at_css(".title").text.strip
@@ -77,9 +77,25 @@ module Import
     end
 
 
-    def get_data(url)
-      Nokogiri::HTML(open(url))
+    def get_episodes(url)
+      episodes_url = url + '/episode.html?season=All'
+      data = open(episodes_url)
+      Nokogiri::HTML(data)
     end
 
+
+    def get_show_data(url)
+      # show_url = url + /summary.html
+    end
+
+
+    def parse_episodes(episodes)
+      
+    end
+
+
+    def parse_show(show)
+      
+    end
   end
 end

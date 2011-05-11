@@ -7,8 +7,14 @@
 <% end %>
 
 <% content_for :right_button do %>
-  <% link_to('Search', root_path, :id => 'right_button', :class => 'search_button') %>
+  <% link_to('Search', '#', :id => 'right_button', :class => 'search_button') %>
 <% end %>
+
+<div id="search_box" style="display: none;">
+  <form>
+    <input type="text" name="search" id="search" />
+  </form>
+</div>
 
 <div id="shows">
   <%= render :partial => 'shared/show', :collection => @shows, :locals => { :mode => 'all' } %>
