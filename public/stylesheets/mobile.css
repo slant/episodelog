@@ -69,6 +69,7 @@ nav #right_button {
   line-height: 24px;
   margin: 6px;
   padding: 3px 10px;
+  font-weight: bold;
 }
 
 nav #left_button {
@@ -83,12 +84,38 @@ nav #right_button {
   right: 0;
 }
 
+nav #left_button a,
+nav #right_button a {
+  color: #E0E0E0;
+}
+
+.search_button {
+  display: block;
+  background: url(/images/search.png) no-repeat 50% 50%;
+  width: 24px;
+  height: 24px;
+}
+
+#search_box {
+  background: #333333;
+  width: auto;
+  padding: 3px 6px;
+}
+
+#search_box input {
+  width: 100%;
+}
+
+#search_terms {
+  padding: 0 6px;
+}
+
 
 /* Show List */
 
 #shows .show {
   background: #303030;
-  border: 1px solid #404040;
+  border: 1px solid #707070;
   border-radius: 8px;
   height: 70px;
   margin: 8px;

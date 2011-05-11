@@ -2,7 +2,12 @@ class ShowsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @shows = Show.all.sort_by(&:name)
+    unless params[:q]
+      @shows = Show.all.sort_by(&:name)
+    else
+      @query = params[:q]
+      @shows = Show.where(['name LIKE ?', "%#{@query}%"])
+    end
   end
 
   def show
