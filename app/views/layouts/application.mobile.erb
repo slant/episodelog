@@ -13,8 +13,14 @@
   </head>
   <body>
     <nav>
+      <% if content_for?(:left_button) %>
       <div id="left_button"><%= yield :left_button %></div>
+      <% end %>
+
+      <% if content_for?(:right_button) %>
       <div id="right_button"><%= yield :right_button %></div>
+      <% end %>
+
       <h1><%= yield :nav_title %></h1>
     </nav>
 

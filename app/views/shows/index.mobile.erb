@@ -7,7 +7,7 @@
 <% end %>
 
 <% content_for :right_button do %>
-  <% link_to('', '#', :class => 'search_button') %>
+  <% link_to('', shows_path, :class => 'search_button') %>
 <% end %>
 
 <div id="search_box"<%=raw ' style="display: none;"' unless @query %>>
@@ -16,12 +16,13 @@
   <% end %>
 </div>
 
-<% if @query %>
+<% if @query and @shows.any? %>
 <div id="search_terms">
-  <p>Search for: "<%= @query %>"</p>
+  <p class="note">Searching for: "<%= @query %>"</p>
 </div>
 <% end %>
 
 <div id="shows">
   <%= render :partial => 'shared/show', :collection => @shows, :locals => { :mode => 'all' } %>
+  <%=raw "<p class=\"note\">No results for \"#{@query}\"" if @query and @shows.empty? %>
 </div>

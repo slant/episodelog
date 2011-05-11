@@ -1,3 +1,11 @@
+<% content_for :left_button do %>
+  <% link_to('Shows', shows_path, :class => 'back') %>
+<% end %>
+
+<% content_for :nav_title do %>
+  <div id="title">Dashboard</div>
+<% end %>
+
 <div id="dashboard">
   <h2>Your shows</h2>
   <%= render :partial => 'home/show', :collection => @shows, :locals => { :mode => 'dashboard' } %>
