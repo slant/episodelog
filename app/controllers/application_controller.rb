@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
     episodes = Episode.where(:show_id => params[:show_id], :season => params[:season])
 
     if state == 'true'
-      current_user.episodes << episodes
+      current_user.episodes << episodes.reject { |e| current_user.episodes.include? e }
     elsif state == 'false'
       current_user.episodes.delete episodes
     end

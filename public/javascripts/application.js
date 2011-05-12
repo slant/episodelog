@@ -61,7 +61,7 @@ $(document).ready(function(){
   );
 
 
-  // Toggle Season state
+  // Toggle season state
   $('.season input:checkbox').bind('click', function(){
     var checked = $(this).is(':checked');
     var message = "";
@@ -73,7 +73,8 @@ $(document).ready(function(){
     // If user accepts confirmation, toggle episodes and set season
     if (confirm(message)) {
       $(this).closest('.season_episodes').find('.episode input:checkbox').attr('checked', checked);
-      set_season_state($(this).closest('.season_episodes'));
+      console.log('season checked: ' + checked);
+      set_season_state($(this).closest('.season_episodes'), checked);
     } else {
       $(this).attr('checked', !checked);
     }
@@ -85,7 +86,10 @@ $(document).ready(function(){
     update_episode_state($(this));
     set_season_state($(this).closest('.season_episodes'));
   });
+
 });
+
+
 
 
 function initialize_seasons(){
@@ -109,17 +113,19 @@ function update_episode_state(episode){
 }
 
 
-function set_season_state(season){
-  var status = season_status(season);
-  season.find('.season input:checkbox').attr('checked', status);
-  update_season_state(season);
+function set_season_state(season, state){
+  console.log('set_season_state: ' + state);
+  if (state != null) {
+    update_season_state(season, state);
+  } else {
+    season.find('.season input:checkbox').attr('checked', season_status(season));
+  }
 }
 
 
-function update_season_state(season){
+function update_season_state(season, state){
+  console.log('update_season_state: ' + state);
   season_number = season.find('.season').attr('id').split('_')[1];
   show_id = season.closest('#content').find('.show_name').attr('id').split('_')[1];
-  state = season.find('.season input:checkbox').attr('checked');
-  
   $.get('/update_season_state', { show_id: show_id, season: season_number, state: state });
 }
