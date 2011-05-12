@@ -90,8 +90,6 @@ $(document).ready(function(){
 });
 
 
-
-
 function initialize_seasons(){
   $('.season_episodes').each(function(i){
     set_season_state($(this));
