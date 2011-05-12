@@ -22,6 +22,7 @@ Episodelog::Application.routes.draw do
 
   match 'update_show_state' => 'application#update_show_state'
   match 'update_episode_state' => 'application#update_episode_state'
+  match 'update_season_state' => 'application#update_season_state'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

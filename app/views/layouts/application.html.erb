@@ -2,10 +2,9 @@
 <html>
   <head>
     <title>EpisodeLog</title>
-    <%= stylesheet_link_tag 'episodelog.css' unless mobile_device? %>
-    <%= stylesheet_link_tag 'mobile.css' if mobile_device? %>
-    <%= javascript_include_tag 'jquery-1.5.2.min', 'application' unless mobile_device? %>
-    <%= javascript_include_tag 'jquery-1.5.2.min', 'jqtouch', 'mobile' if mobile_device? %>
+    <%= stylesheet_link_tag 'episodelog.css' %>
+    <%= javascript_include_tag 'jquery-1.5.2.min', 'application' %>
+    <%= javascript_include_tag 'ga.js' %>
     <%= csrf_meta_tag %>
   </head>
   <body>

@@ -63,9 +63,20 @@ $(document).ready(function(){
 
   // Toggle Season state
   $('.season input:checkbox').bind('click', function(){
-    checked = $(this).is(':checked');
-    $(this).closest('.season_episodes').find('.episode input:checkbox').attr('checked', checked);
-    set_season_state($(this).closest('.season_episodes'));
+    var checked = $(this).is(':checked');
+    var message = "";
+
+    // Set confirmation message
+    if (checked) { message = "Are you sure you want to mark all episodes in this season as watched?"; }
+    else { message = "Are you sure you want to mark all episodes in this season as unwatched?"; }
+
+    // If user accepts confirmation, toggle episodes and set season
+    if (confirm(message)) {
+      $(this).closest('.season_episodes').find('.episode input:checkbox').attr('checked', checked);
+      set_season_state($(this).closest('.season_episodes'));
+    } else {
+      $(this).attr('checked', !checked);
+    }
   });
 
 
@@ -91,28 +102,24 @@ function season_status(season){
 }
 
 
-function set_season_state(season){
-  var status = season_status(season);
-  season.find('.season input:checkbox').attr('checked', status);
-}
-
-
 function update_episode_state(episode){
-  episode_id = episode.closest('.episode').attr('id').split('_')[1];;
+  episode_id = episode.closest('.episode').attr('id').split('_')[1];
   episode_state = episode.is(':checked') ? 'add' : 'remove';
   $.get('/update_episode_state', { episode_id: episode_id, state: episode_state });
 }
 
 
-function update_episode_list_state(season_episodes){
-  // IN DEVELOPMENT
-  episodes = season_episodes.find('.episode input:checkbox').attr('checked');
-  episode_state = episode.is(':checked') ? 'add' : 'remove';
-  
-  var episode_ids;
-  $.each(episodes, function(i, episode) {
-    episode_ids.push(episode.closest('.episode').attr('id').split('_')[1]);
-  });
+function set_season_state(season){
+  var status = season_status(season);
+  season.find('.season input:checkbox').attr('checked', status);
+  update_season_state(season);
+}
 
-  $.get('/update_episode_state', { episode_ids: episode_id, state: state });
+
+function update_season_state(season){
+  season_number = season.find('.season').attr('id').split('_')[1];
+  show_id = season.closest('#content').find('.show_name').attr('id').split('_')[1];
+  state = season.find('.season input:checkbox').attr('checked');
+  
+  $.get('/update_season_state', { show_id: show_id, season: season_number, state: state });
 }

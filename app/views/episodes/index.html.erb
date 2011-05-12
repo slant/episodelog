@@ -1,10 +1,10 @@
 <p>&laquo; <%= link_to "Back to show details", show_path(@show.short_name) %></p>
 
-<h1><%= @show.name %></h1>
+<h1 id="show_<%= @show.id %>" class="show_name"><%= @show.name %></h1>
 
 <% @episodes.each do |season, episodes| %>
 <table id="season_<%= season %>_episodes" class="season_episodes">
-  <tr class="season">
+  <tr id="season_<%= season %>" class="season">
     <td class="checkbox"><%= check_box_tag 'seasons[]', season, false, :id => "season_state_#{season}" %></td>
     <td class="season_number" colspan="3"><h3>Season <%= season %></h3></td>
   </tr>

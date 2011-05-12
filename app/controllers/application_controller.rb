@@ -38,6 +38,19 @@ class ApplicationController < ActionController::Base
     render :nothing => true
   end
 
+  def update_season_state
+    state = params[:state]
+    episodes = Episode.where(:show_id => params[:show_id], :season => params[:season])
+
+    if state == 'true'
+      current_user.episodes << episodes
+    elsif state == 'false'
+      current_user.episodes.delete episodes
+    end
+
+    render :nothing => true
+  end
+
   def prepare_for_iphone
     session[:mobile_param] = params[:mobile] if params[:mobile]
     request.format = :mobile if mobile_device?
