@@ -3,7 +3,7 @@
     <%= current_user.shows.include?(show) ? link_to('remove', '', :class => 'remove') : link_to('favorite', '', :class => 'add') %>
   </div>
   <div class="details">
-    <h3><%= link_to truncate(show.name, :length => 20), show_episodes_path(show), :class => 'test' %></h3>
+    <h3><%= link_to truncate(show.name, :length => 30), show_episodes_path(show), :class => 'test' %></h3>
 
     <div class="show-details">
       <div class="progress">
