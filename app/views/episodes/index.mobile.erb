@@ -1,0 +1,55 @@
+<% content_for :left_button do %>
+  <% link_to('Dashboard', root_path, :class => 'back') %>
+<% end %>
+
+<% content_for :nav_title do %>
+  <div id="title"><%= @show.name %></div>
+<% end %>
+
+<% content_for :right_button do %>
+  <% link_to('', shows_path, :class => 'favorite_button') %>
+<% end %>
+
+<div id="show_progress" class="section">
+  <h3>Progress</h3>
+  <table>
+    <tr class="season">
+      <td><span class="season_number">Overall</span></td>
+      <td>
+        <div class="progress">
+          <div class="complete" style="width: <%= progress(@show) %>px;"></div>
+          <span class="copy"><%= progress(@show) == 100 ? "completed" : "#{progress(@show)}% complete" %></span>
+        </div>
+      </td>
+    </tr>
+    <% @show.seasons.each do |s| %>
+    <tr class="season">
+      <td><span class="season_number">Season <%= s %></span></td>
+      <td>
+        <div class="progress">
+          <div class="complete" style="width: <%= progress(@show, s) %>px;"></div>
+          <span class="copy"><%= progress(@show, s) == 100 ? "completed" : "#{progress(@show, s)}% complete" %></span>
+        </div>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<hr />
+
+<div id="episodes" class="section">
+  <% @episodes.each do |season, episodes| %>
+  <div id="season_<%= season %>_episodes" class="season_episodes">
+    <div id="season_<%= season %>" class="season">
+      <h3>Season <%= season %></h3>
+    </div>
+
+    <% episodes.each do |episode| %>
+    <div id="episode_<%= episode.id %>" class="episode">
+      <p class="episode_number"><%= episode.episode %> <%= link_to episode.name, show_episode_path(@show.short_name, episode.id) %></p>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>

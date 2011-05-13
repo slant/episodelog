@@ -20,7 +20,9 @@
 <p class="note">Searching for: "<%= @query %>"</p>
 <% end %>
 
-<div id="shows">
-  <%= render :partial => 'shared/show', :collection => @shows, :locals => { :mode => 'all' } %>
-  <%=raw "<p class=\"note\">No results for \"#{@query}\"" if @query and @shows.empty? %>
+<div class="section">
+  <div id="shows">
+    <%= render :partial => 'shared/show', :collection => @shows, :locals => { :mode => 'all' } %>
+    <%=raw "<p class=\"note\">No results for \"#{@query}\"" if @query and @shows.empty? %>
+  </div>
 </div>

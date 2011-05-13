@@ -1,0 +1,12 @@
+<% content_for :nav_title do %>
+  <div id="title">EpisodeLog</div>
+<% end %>
+
+<% content_for :right_button do %>
+  <% link_to('Sign in', new_user_session_path) %>
+<% end %>
+
+<div class="section">
+  <p>Welcome to EpisodeLog! You can finally stop watching television in vain!</p>
+  <p>Please <%= link_to 'sign in', new_user_session_path %> or <%= link_to 'sign up', new_user_registration_path %> to access your account.</p>
+</div>

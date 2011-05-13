@@ -274,6 +274,11 @@ table {
   padding: 12px auto 50px;
 }
 
+.section {
+  clear: both;
+  margin-bottom: 20px;
+}
+
 
 
 /**************/

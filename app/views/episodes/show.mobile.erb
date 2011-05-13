@@ -1,0 +1,18 @@
+<% content_for :left_button do %>
+  <% link_to('Dashboard', root_path, :class => 'back') %>
+<% end %>
+
+<% content_for :nav_title do %>
+  <div id="title"><%= link_to @show.name, show_episodes_path(@show) %></div>
+<% end %>
+
+<% content_for :right_button do %>
+  <% link_to('', shows_path, :class => 'search_button') %>
+<% end %>
+
+<div class="section">
+  <h2><%= @episode.name %></h2>
+  <p>Season <%= @episode.season %>, Episode <%= @episode.episode %></p>
+  <%= content_tag( :p, 'Air Date: ' + @episode.air_date.strftime('%m/%d/%Y') ) if @episode.air_date %>
+  <p><%= @episode.synopsis %></p>
+</div>

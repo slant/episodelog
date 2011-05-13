@@ -6,18 +6,20 @@
   <% link_to('Sign up', new_user_registration_path) %>
 <% end %>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email %><br />
-  <%= f.email_field :email, :autocorrect => 'off', :autocomplete => 'off', :autocapitalize => 'off' %></p>
+<div class="section">
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <p><%= f.label :email %><br />
+    <%= f.email_field :email, :autocorrect => 'off', :autocomplete => 'off', :autocapitalize => 'off' %></p>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+    <p><%= f.label :password %><br />
+    <%= f.password_field :password %></p>
 
-  <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
-  <% end -%>
+    <% if devise_mapping.rememberable? -%>
+      <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+    <% end -%>
 
-  <p><%= f.submit "Sign in" %></p>
-<% end %>
+    <p><%= f.submit "Sign in" %></p>
+  <% end %>
 
-<%= render :partial => "devise/shared/links" %>
+  <%= render :partial => "devise/shared/links" %>
+</div>

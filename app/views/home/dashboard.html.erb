@@ -1,5 +1,24 @@
 <div id="dashboard">
-  <h2>Your shows</h2>
-  <%= render :partial => 'home/show', :collection => @shows, :locals => { :mode => 'dashboard' } %>
-  <%=raw 'You are not following any shows yet. ' + link_to('Go add some', shows_path) + '!' if @shows.empty? %>
+  <div class="section">
+    <h2>Your shows</h2>
+    <%= render :partial => 'home/favorite_show', :collection => @shows, :as => :show, :locals => { :mode => 'dashboard' } %>
+    <%=raw 'You are not following any shows yet. ' + link_to('Go add some', shows_path) + '!' if @shows.empty? %>
+    <div style="clear: both;"></div>
+  </div>
+
+  <% if @watched_shows.any? %>
+  <div class="section">
+    <h2>Your shows</h2>
+    <%= render :partial => 'home/show', :collection => @watched_shows, :locals => { :mode => 'dashboard' } %>
+    <div style="clear: both;"></div>
+  </div>
+  <% end %>
+
+  <% if @completed_shows.any? %>
+  <div class="section">
+    <h2>Your shows</h2>
+    <%= render :partial => 'home/show', :collection => @completed_shows, :locals => { :mode => 'dashboard' } %>
+    <div style="clear: both;"></div>
+  </div>
+  <% end %>
 </div>
