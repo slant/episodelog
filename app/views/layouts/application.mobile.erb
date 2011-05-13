@@ -24,7 +24,7 @@
       <h1><%= yield :nav_title %></h1>
     </nav>
 
-    <%= content_tag( :p, notice, :id => 'flash', :class => 'notice', :style => (notice ? '' : 'display: none') ) %>
+    <%= content_tag( :p, notice, :id => 'flash', :class => 'notice section', :style => (notice ? '' : 'display: none') ) %>
 
     <div id="content">
       <%= yield %>
