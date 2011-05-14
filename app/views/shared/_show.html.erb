@@ -1,7 +1,7 @@
 <div id="show_<%= show.id %>" class="show<%= (current_user.shows.include?(show) ? ' favorite' : '') if current_user %>">
   <div class="details">
     <h3><%= link_to show.name, show_path(show), :class => 'test' %></h3>
-    <p><%= link_to 'episodes', show_episodes_path(show) %><%= '|' + (current_user.shows.include?(show) ? link_to('remove', '', :class => 'remove') : link_to('favorite', '', :class => 'add')) if current_user %></p>
+    <p><%= link_to 'episodes', show_episodes_path(show) %><%=raw ' | ' + (current_user.shows.include?(show) ? link_to('remove', '', :class => 'remove') : link_to('favorite', '', :class => 'add')) if current_user %></p>
     <div class="show-details">
       <p><%= pluralize show.seasons.size, "season" %>, <%= pluralize show.episodes.size, "episode" %></p>
     </div>
