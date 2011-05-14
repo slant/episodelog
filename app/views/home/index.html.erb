@@ -1,1 +1,6 @@
-<%= @shows.size %> shows
+<div class="box section">
+  <h2>Welcome to EpisodeLog!</h2>
+  <p>EpisodeLog helps you keep track of which episodes you've seen and which you haven't.</p>
+  <p>Please <%= link_to 'sign in', new_user_session_path %> or <%= link_to 'sign up', new_user_registration_path %> to access your account.</p>
+  <p>Currently tracking <%= @shows.size %> shows.</p>
+</div>

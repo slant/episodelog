@@ -279,6 +279,18 @@ table {
   margin-bottom: 20px;
 }
 
+.box {
+  background: #404040;
+  border: 1px solid #606060;
+  border-radius: 6px;
+  padding: 0 10px;
+}
+
+.box h2 {
+  font-weight: normal;
+  font-size: 1.6em;
+}
+
 
 
 /**************/
