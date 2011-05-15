@@ -13,6 +13,7 @@ URLS = [
   'http://www.tv.com/the-event-/show/78485', # The Event
   'http://www.tv.com/family-guy/show/348', # Family Guy
   'http://www.tv.com/firefly/show/7097', # Firefly
+  'http://www.tv.com/flashforward/show/76455', # FlashForward
   'http://www.tv.com/flight-of-the-conchords/show/68719', # Flight of the Conchords
   'http://www.tv.com/friends/show/71', # Friends
   'http://www.tv.com/fringe/show/75146', # Fringe
