@@ -73,7 +73,7 @@ module Import
       end
 
       puts 
-      puts "#{@shows_created > 0 ? @shows_created : "0"} new shows and #{@episodes_created > 0 ? @episodes_created : "0"} new episodes were created"
+      puts "#{@shows_created > 0 ? @shows_created : "0"} new shows and #{@episodes_created > 0 ? @episodes_created : "0"} new episodes were added"
     end
 
 
