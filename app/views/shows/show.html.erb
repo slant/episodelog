@@ -6,13 +6,13 @@
     <li><hr /></li>
     <li class="season">
       <span class="season_number">Overall</span>
-      <%= render :partial => 'shared/progress_bar', :locals => { :show => @show } %>
+      <%= render :partial => 'shared/progress_bar.html.erb', :locals => { :show => @show } %>
     </li>
     <li><hr /></li>
     <% @show.seasons.each do |s| %>
     <li class="season">
       <span class="season_number">Season <%= s %></span>
-      <%= render :partial => 'shared/progress_bar', :locals => { :show => @show, :season => s } %>
+      <%= render :partial => 'shared/progress_bar.html.erb', :locals => { :show => @show, :season => s } %>
     </li>
     <% end %>
   </ul>
