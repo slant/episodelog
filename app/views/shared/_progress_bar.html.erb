@@ -1,0 +1,5 @@
+<% season ||= nil %>
+<div class="progress">
+  <div class="complete" style="width: <%= progress(show, (season ? season : nil)) %>px;"></div>
+  <span class="copy"><%= progress(show, (season ? season : nil)) == 100 ? "completed" : "#{progress(show, (season ? season : nil))}% complete" %></span>
+</div>

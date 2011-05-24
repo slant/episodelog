@@ -16,20 +16,14 @@
     <tr class="season">
       <td><span class="season_number">Overall</span></td>
       <td>
-        <div class="progress">
-          <div class="complete" style="width: <%= progress(@show) %>px;"></div>
-          <span class="copy"><%= progress(@show) == 100 ? "completed" : "#{progress(@show)}% complete" %></span>
-        </div>
+        <%= render :partial => 'shared/progress_bar', :locals => { :show => @show } %>
       </td>
     </tr>
     <% @show.seasons.each do |s| %>
     <tr class="season">
       <td><span class="season_number">Season <%= s %></span></td>
       <td>
-        <div class="progress">
-          <div class="complete" style="width: <%= progress(@show, s) %>px;"></div>
-          <span class="copy"><%= progress(@show, s) == 100 ? "completed" : "#{progress(@show, s)}% complete" %></span>
-        </div>
+        <%= render :partial => 'shared/progress_bar', :locals => { :show => @show, :season => s } %>
       </td>
     </tr>
     <% end %>
