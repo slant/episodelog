@@ -213,7 +213,12 @@ nav #right_button a {
   text-decoration: none;
   height: 54px;
   margin: 0 0 0 73px;
-  padding: 8px 0 0 10px;
+  padding: 3px 0 0 10px;
+}
+
+#dashboard .show .show-details p {
+  margin: 3px 0 0;
+  padding: 0;
 }
 
 #dashboard .show h3 {
@@ -222,10 +227,6 @@ nav #right_button a {
   padding: 0 0 4px;
 }
 
-#dashboard .show p {
-  margin: 0;
-  padding: 0;
-}
 
 
 /* Show List */
