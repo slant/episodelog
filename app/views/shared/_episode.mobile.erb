@@ -1,0 +1,10 @@
+<div id="episode_<%= episode.id %>" class="episode<%= (current_user.episodes.include?(episode) ? ' watched' : '') if current_user %>">
+  <div class="status">
+    <%= current_user.episodes.include?(episode) ? link_to('watched', '', :class => 'remove') : link_to('-', '', :class => 'add') if current_user %>
+  </div>
+
+  <% link_to show_episode_path(@show.short_name, episode.id), :class => 'details' do %>
+    <h3 class="episode_number"><%= episode.name %></h3>
+    <p>Episode <%= episode.episode %></p>
+  <% end %>
+</div>

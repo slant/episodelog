@@ -39,11 +39,7 @@
       <h3>Season <%= season %></h3>
     </div>
 
-    <% episodes.each do |episode| %>
-    <div id="episode_<%= episode.id %>" class="episode">
-      <p class="episode_number"><%= episode.episode %> <%= link_to episode.name, show_episode_path(@show.short_name, episode.id) %></p>
-    </div>
-    <% end %>
+    <%= render :partial => 'shared/episode', :collection => episodes %>
   </div>
   <% end %>
 </div>

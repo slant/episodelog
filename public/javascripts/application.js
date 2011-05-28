@@ -73,7 +73,6 @@ $(document).ready(function(){
     // If user accepts confirmation, toggle episodes and set season
     if (confirm(message)) {
       $(this).closest('.season_episodes').find('.episode input:checkbox').attr('checked', checked);
-      console.log('season checked: ' + checked);
       set_season_state($(this).closest('.season_episodes'), checked);
     } else {
       $(this).attr('checked', !checked);
@@ -112,7 +111,6 @@ function update_episode_state(episode){
 
 
 function set_season_state(season, state){
-  console.log('set_season_state: ' + state);
   if (state != null) {
     update_season_state(season, state);
   } else {
@@ -122,7 +120,6 @@ function set_season_state(season, state){
 
 
 function update_season_state(season, state){
-  console.log('update_season_state: ' + state);
   season_number = season.find('.season').attr('id').split('_')[1];
   show_id = season.closest('#content').find('.show_name').attr('id').split('_')[1];
   $.get('/update_season_state', { show_id: show_id, season: season_number, state: state });

@@ -30,5 +30,9 @@
     <div id="content">
       <%= yield %>
     </div>
+
+    <%= content_tag :div, :id => 'footer' do %>
+      <%= link_to 'Sign Out', logout_path %>
+    <% end if current_user %>
   </body>
 </html>

@@ -52,6 +52,12 @@ table {
   border-collapse: collapse;
 }
 
+hr {
+  background: #707070;
+  border: 0;
+  height: 1px;
+}
+
 
 /* Navigation Bar */
 
@@ -286,6 +292,72 @@ nav #right_button a {
 }
 
 
+
+/* Show List */
+
+#episodes .episode {
+  background: #303030;
+  border: 1px solid #707070;
+  border-radius: 8px;
+  height: 70px;
+  margin-bottom: 6px;
+  padding: 0 8px 0 0;
+}
+
+#episodes .episode.watched {
+  background: #363C30;
+  border-color: #B0C060;
+}
+
+#episodes .episode .status {
+  float: left;
+  background: #404040 url(/images/star_small.png);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: center;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+}
+
+#episodes .episode .status a {
+  display: block;
+  line-height: 70px;
+  text-decoration: none;
+}
+
+#episodes .episode .status a:hover,
+#episodes .episode .status a:active,
+#episodes .episode .status a:focus {
+  text-decoration: none;
+}
+
+#episodes .episode.watched .status {
+  background: #485040 url(/images/star_large.png);
+}
+
+#episodes .episode .details {
+  display: block;
+  color: #E0E0E0;
+  text-decoration: none;
+  height: 54px;
+  margin: 0 0 0 73px;
+  padding: 8px 0 0 10px;
+}
+
+#episodes .episode h3 {
+  font-size: 16px;
+  margin: 0;
+  padding: 7px 0 4px;
+}
+
+#episodes .episode p {
+  margin: 0;
+  padding: 0;
+}
+
+
+
 /* Progress bar */
 
 .progress {
@@ -327,4 +399,24 @@ nav #right_button a {
   text-align: center;
   margin-top: -17px;
   text-shadow: 0 0 8px #111;
+}
+
+
+/* Footer */
+
+#footer {
+  background: #303030;
+  border-top: 1px solid #404040;
+  font-size: 14px;
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  margin-top: 24px;
+}
+
+#footer a {
+  display: block;
+  line-height: 36px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
