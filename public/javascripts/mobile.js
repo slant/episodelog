@@ -26,10 +26,36 @@ $(function(){
     }
     return false;
   });
+
+  $('#shows .show .status').bind('click', function(){
+    show = $(this).closest('.show');
+    show_id = $(this).closest('.show').attr('id').split('_')[1];
+
+    if (show.hasClass('favorite')){
+      toggle_show(show_id, 'remove');
+      show.removeClass('favorite');
+      show.find('.status a').text('favorite');
+    } else {
+      toggle_show(show_id, 'add');
+      show.addClass('favorite');
+      show.find('.status a').text('remove');
+    }
+    return false;
+  });
+
+  $('#dashboard .show .status').bind('click', function(){
+    show = $(this).closest('.show');
+    show_id = $(this).closest('.show').attr('id').split('_')[1];
+    toggle_show(show_id, 'remove');
+    show.fadeOut();
+    return false;
+  });
 });
 
 function toggle_episode(id, state) {
   $.get('/update_episode_state', { episode_id: id, state: state });
 }
 
-function toggle_show(id, state)
+function toggle_show(id, state) {
+  $.get('/update_show_state', { show_id: id, state: state });
+}
