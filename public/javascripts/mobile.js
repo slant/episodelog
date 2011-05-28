@@ -28,6 +28,8 @@ $(function(){
   });
 });
 
-function toggle_episode(episode_id, episode_state) {
-  $.get('/update_episode_state', { episode_id: episode_id, state: episode_state });
+function toggle_episode(id, state) {
+  $.get('/update_episode_state', { episode_id: id, state: state });
 }
+
+function toggle_show(id, state)

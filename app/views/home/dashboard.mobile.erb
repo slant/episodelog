@@ -9,7 +9,7 @@
 <div id="dashboard">
   <div class="section">
     <h2>Favorite shows</h2>
-    <%= render :partial => 'home/favorite_show', :collection => @shows, :as => :show, :locals => { :mode => 'dashboard' } %>
+    <%= render :partial => 'home/show', :collection => @shows, :as => :show, :locals => { :mode => 'dashboard' } %>
     <% if @show_count.size == 0 %>
     <%=raw "<p>You are not following any shows yet. #{link_to('Go add some', shows_path)}!</p>" %>
     <% elsif @shows.size == 0 and @show_count.size > 0 %>
