@@ -385,6 +385,7 @@ table {
 
 #show_progress {
   float: right;
+  background: #404040;
   border: 1px solid #808080;
   border-radius: 6px;
   width: 170px;
@@ -447,10 +448,14 @@ table {
 }
 
 .season_episodes .episode .checkbox {
-  background: #404040;
+  background: url(/images/unchecked.png) no-repeat 50% 50%;
   text-align: center;
   width: 32px;
   height: 32px;
+}
+
+.season_episodes .episode.watched .checkbox {
+  background: url(/images/checked.png) no-repeat 50% 50%;
 }
 
 .season_episodes .episode .episode_number {

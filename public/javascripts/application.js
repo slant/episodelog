@@ -49,13 +49,13 @@ $(document).ready(function(){
   });
 
 
-  $('.episode_number, .name, .air_date', '#episodes .episode').bind('click', function(){
-    episode_url = $(this).find('.name a').attr('href')
-    alert(episode_url);
+  $('.episode_number, .name, .air_date', '.season_episodes .episode').bind('click', function(){
+    episode_url = $(this).closest('.episode').find('.name a').attr('href')
+    location.href = episode_url;
   });
 
 
-  $('#episodes .episode').hover(
+  $('.season_episodes .episode').hover(
     function(){ $(this).addClass('active'); },
     function(){ $(this).removeClass('active'); }
   );
@@ -73,6 +73,14 @@ $(document).ready(function(){
     // If user accepts confirmation, toggle episodes and set season
     if (confirm(message)) {
       $(this).closest('.season_episodes').find('.episode input:checkbox').attr('checked', checked);
+
+      if (checked) {
+        $(this).closest('.season_episodes').find('.episode').addClass('watched');
+      } else {
+        $(this).closest('.season_episodes').find('.episode').removeClass('watched');
+      }
+
+
       set_season_state($(this).closest('.season_episodes'), checked);
     } else {
       $(this).attr('checked', !checked);
@@ -81,9 +89,17 @@ $(document).ready(function(){
 
 
   // Toggle episode state
-  $('.episode input:checkbox').bind('click', function(){
-    update_episode_state($(this));
-    set_season_state($(this).closest('.season_episodes'));
+  $('.episode .checkbox').bind('click', function(){
+    checkbox = $('input:checkbox', this);
+
+    if (checkbox.is(':checked')) {
+      checkbox.prop('checked', false);
+    } else {
+      checkbox.prop('checked', true);
+    }
+
+    update_episode_state(checkbox);
+    set_season_state(checkbox.closest('.season_episodes'));
   });
 
 });
@@ -106,6 +122,7 @@ function season_status(season){
 function update_episode_state(episode){
   episode_id = episode.closest('.episode').attr('id').split('_')[1];
   episode_state = episode.is(':checked') ? 'add' : 'remove';
+  episode.is(':checked') ? episode.closest('.episode').addClass('watched') : episode.closest('.episode').removeClass('watched');
   $.get('/update_episode_state', { episode_id: episode_id, state: episode_state });
 }
 

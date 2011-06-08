@@ -1,5 +1,7 @@
 Episodelog::Application.routes.draw do
 
+  get "users/show"
+
   devise_for :users do
      get 'login', :to => 'devise/sessions#new'
      get 'logout', :to => 'devise/sessions#destroy'
@@ -10,6 +12,10 @@ Episodelog::Application.routes.draw do
     resources :episodes
     get 'episodes/:season/:episode' => 'episodes#show'
   end
+
+  resources :users
+  resources :friends
+  resources :friendships
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

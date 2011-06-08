@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110421055134) do
+ActiveRecord::Schema.define(:version => 20110606054233) do
 
   create_table "episodes", :force => true do |t|
     t.integer  "show_id"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(:version => 20110421055134) do
   create_table "followed_shows", :force => true do |t|
     t.integer  "user_id"
     t.integer  "show_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "friendships", :force => true do |t|
+    t.string   "user_id"
+    t.string   "friend_id"
+    t.string   "validation_code"
+    t.boolean  "accepted",        :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -52,6 +61,8 @@ ActiveRecord::Schema.define(:version => 20110421055134) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

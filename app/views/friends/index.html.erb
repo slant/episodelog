@@ -1,0 +1,11 @@
+<h2>Friends</h2>
+<% if @friends.any? %>
+<ul>
+  <% @friends.each do |friend| %>
+  <li>
+    <%= link_to friend.name, user_path(friend) %><br />
+    Following <%= friend.followed_shows.size %> shows
+  </li>
+  <% end %>
+</ul>
+<% end %>

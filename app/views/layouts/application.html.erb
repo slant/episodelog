@@ -4,7 +4,7 @@
     <title>EpisodeLog</title>
     <%= hoptoad_javascript_notifier %>
     <%= stylesheet_link_tag 'episodelog.css' %>
-    <%= javascript_include_tag 'jquery-1.5.2.min', 'application' %>
+    <%= javascript_include_tag 'jquery-1.6.1.min', 'application' %>
     <%= javascript_include_tag 'ga.js' %>
     <%= csrf_meta_tag %>
     <%= render :partial => 'shared/ga' %>
@@ -24,8 +24,9 @@
       <div id="nav_container">
         <div id="nav">
           <ul>
-            <%=raw "<li>" + link_to('Dashboard', root_path) + "</li>" if user_signed_in? %>
+            <%= content_tag( :li, link_to('Dashboard', root_path) ) if user_signed_in? %>
             <li><%= link_to 'Shows', shows_path %></li>
+            <%# content_tag( :li, link_to('Friends', friends_path) ) if user_signed_in? %>
           </ul>
         </div>
       </div>
