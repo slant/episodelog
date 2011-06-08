@@ -1,9 +1,8 @@
 $(document).ready(function(){
   initialize_seasons();
 
-  $('.notice').click(function(){
-    $(this).fadeOut();
-  });
+  // Dismiss flash messages upon clicking
+  $('.notice').click(function(){ $(this).fadeOut() });
 
   // Follow show
   $('.show .add').bind('click', function(){
