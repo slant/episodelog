@@ -47,6 +47,15 @@ Episodelog::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  ActionMailer::Base.smtp_settings = {
+    :address => 'smtp.gmail.com',
+    :port => 587,
+    :domain => 'episodelog.tv',
+    :authentication => :plain,
+    :user_name => 'rcross@episodelog.tv',
+    :password => 'IcDBfHc_34|j'
+  }
+
   # Devise configuration
   config.action_mailer.default_url_options = { :host => 'http://episodelog.heroku.com' }
 end
