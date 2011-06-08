@@ -29,7 +29,7 @@ $(document).ready(function(){
   $('.show .remove').bind('click', function(){
     show_id = $(this).closest('.show').attr('id').split('_')[1];
     show = $(this).closest('.show')
-    if (confirm('Are you sure you want to stop following this show? All of your watched episodes will be forgotten.')){
+    if (confirm('Are you sure you want to stop following this show?')){
       $.ajax({
         method: 'get',
         url: '/update_show_state',
@@ -79,7 +79,6 @@ $(document).ready(function(){
       } else {
         $(this).closest('.season_episodes').find('.episode').removeClass('watched');
       }
-
 
       set_season_state($(this).closest('.season_episodes'), checked);
     } else {
