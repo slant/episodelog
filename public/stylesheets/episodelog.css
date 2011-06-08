@@ -84,6 +84,7 @@ table {
 }
 
 #wrapper {
+  background-image: url(/images/background.png);
   min-height: 100%;
 }
 
@@ -438,6 +439,7 @@ table {
 }
 
 .season_episodes .episode {
+  background: #202020;
   border: solid #3A3A3A;
   border-width: 0 1px 1px 1px;
   cursor: pointer;
