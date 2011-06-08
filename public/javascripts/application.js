@@ -1,6 +1,10 @@
 $(document).ready(function(){
   initialize_seasons();
 
+  $('.notice').click(function(){
+    $(this).fadeOut();
+  });
+
   // Follow show
   $('.show .add').bind('click', function(){
     show_id = $(this).closest('.show').attr('id').split('_')[1];
