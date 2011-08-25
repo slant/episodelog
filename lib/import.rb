@@ -18,7 +18,7 @@ module Import
         episodes = []
 
         name = doc.at_css(".title").text.strip
-        short_name = url.gsub('http://www.tv.com/','').split('/')[0]
+        short_name = url.gsub('http://www.tv.com/','').gsub(/\./,'').split('/')[0]
 
         # Ensure that show exists, if not, create it
         show = Show.where(:name => name, :short_name => short_name).first

@@ -3,10 +3,10 @@ Episodelog::Application.routes.draw do
   get "users/show"
 
   devise_for :users do
-     get 'login', :to => 'devise/sessions#new'
-     get 'logout', :to => 'devise/sessions#destroy'
-     get 'signup', :to => 'devise/registrations#new'
-   end
+    get 'login', :to => 'devise/sessions#new'
+    get 'logout', :to => 'devise/sessions#destroy'
+    get 'signup', :to => 'devise/registrations#new'
+  end
 
   resources :shows do
     resources :episodes

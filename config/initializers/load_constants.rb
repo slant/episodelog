@@ -3,6 +3,7 @@ URLS = [
   'http://www.tv.com/the-a-team/show/727', # The A-Team
   'http://www.tv.com/alias/show/3451', # Alias
   'http://www.tv.com/the-amazing-race/show/6686', # The Amazing Race
+  'http://www.tv.com/american-dad%21/show/21935', # American Dad!
   'http://www.tv.com/archer/show/77555', # Archer
   'http://www.tv.com/battlestar-galactica-2003/show/23557', # Battlestar Galactica
   'http://www.tv.com/the-big-bang-theory/show/58056', # The Big Bang Theory
